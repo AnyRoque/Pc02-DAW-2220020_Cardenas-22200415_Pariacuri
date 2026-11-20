@@ -1,10 +1,17 @@
 <template>
   <q-layout view="hHh lpR fFf">
-    <q-header class="bg-teal-10"><q-toolbar class="shell"><q-toolbar-title>Country Explorer</q-toolbar-title></q-toolbar></q-header>
-    <q-page-container><router-view :key="$route.path" /></q-page-container>
+    <q-header elevated class="bg-primary text-white">
+      <q-toolbar>
+        <q-btn flat round dense icon="public" to="/" aria-label="Inicio" />
+        <q-toolbar-title class="cursor-pointer" @click="$router.push('/')">
+          Country Explorer
+        </q-toolbar-title>
+        <div class="text-caption gt-xs">Datos: RestCountries · Banderas: flagcdn</div>
+      </q-toolbar>
+    </q-header>
+
+    <q-page-container>
+      <router-view />
+    </q-page-container>
   </q-layout>
 </template>
-<style>
-body { background: #f4f6f4; color: #183c38; }
-.shell, .detail { max-width: 980px; margin: auto; }
-</style>
